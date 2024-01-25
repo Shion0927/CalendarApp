@@ -1,0 +1,102 @@
+CSS
+    /**
+     * Bootstrapカスタマイズ
+     */
+    
+    /* テキストIME */
+    input {
+       ime-mode: disabled;
+    }
+    input.ime-active {
+       ime-mode: active;
+    }
+    input.ime-inactive {
+       ime-mode: inactive;
+    }
+    
+    /* モーダルダイアログ */
+    .panel-body > .container > .row, .modal-body > .container > .row {
+        margin: 10px;
+    }
+    
+    .container > .row > div.required label:after {
+        content:"*";color:red;
+    }
+    
+    .form-inline > .form-group > input.ymd {
+        width: 110px;
+    }
+    .form-inline > .form-group > input.ymdHm {
+        width: 160px;
+    }
+    .hidden {
+        visibility: hidden;
+        display: none;
+    }
+    
+    /* チェックボックス */
+    [type="checkbox"]:checked,
+    [type="checkbox"]:not(:checked) {
+       position: absolute;
+       left: -9999px;
+    }
+    [type="checkbox"]:checked + label,
+    [type="checkbox"]:not(:checked) + label {
+       font-weight: normal;
+       position: relative;
+       padding-left: 24px;
+       cursor: pointer;
+       line-height: 18px;
+       display: inline-block;
+       color: #666;
+    }
+    [type="checkbox"]:checked + label:before,
+    [type="checkbox"]:not(:checked) + label:before {
+       content: '';
+       position: absolute;
+       left: 0;
+       top: 0;
+       width: 20px;
+       height: 20px;
+       border: 1px solid #ddd;
+       background: #fff;
+    }
+    [type="checkbox"]:focus + label:before,
+    [type="checkbox"]:active + label:before{
+        content: '';
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        left: 0;
+        top: 0;
+        border: 1px solid rgba(128, 128, 128, 1);
+        box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.075) inset, 0px 0px 8px rgba(128, 128, 128, 1);
+        background: #fff;
+    }
+    
+    [type="checkbox"]:checked + label:after,
+    [type="checkbox"]:not(:checked) + label:after {
+       content: '';
+       width: 8px;
+       height: 12px;
+       background: #ffffff;
+       border-right: 3px solid #808080;
+       border-bottom: 3px solid #808080;
+       position: absolute;
+       top: 2px;
+       left: 6px;
+       -webkit-transition: all 0.2s ease;
+       transition: all 0.2s ease;
+    }
+    [type="checkbox"]:not(:checked) + label:after {
+       opacity: 0;
+       -webkit-transform: rotate(45deg);
+       -ms-transform: rotate(45deg);
+       transform: rotate(45deg);
+    }
+    [type="checkbox"]:checked + label:after {
+       opacity: 1;
+       -webkit-transform: rotate(45deg);
+       -ms-transform: rotate(45deg);
+       transform: rotate(45deg);
+    }
